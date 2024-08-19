@@ -14,17 +14,17 @@ spring:
           - id: author-service
             uri: lb://AUTHORSERVICE
             predicates:
-              - Path=/authors/**
+              - Path=/api/author/**
               - Method=GET
-            filters:
-              - RewritePath=/authors/health, /health
+#            filters:
+#              - RewritePath=/authors/health, /health
           - id: book-service
             uri: lb://BOOKSERVICE
             predicates:
-              - Path=/books/**
+              - Path=/api/books/**
               - Method=GET
-            filters:
-              - RewritePath=/books/health, /health
+#            filters:
+#              - RewritePath=/books/health, /health
 
 eureka:
   client:
